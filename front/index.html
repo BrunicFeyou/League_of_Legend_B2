@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-league">
+        <h2>Bienvenue sur </h2>
+        <img style="width: 7em;" src="./images/League_of_Legends_2019_vector.svg.png" alt="Logo de leagues of leagends"> 
+    </div>
+    <h1> Choisissez Vos Champions</h1>
+    <form >
+        <label for="champion"></label>
+        <input name="champion" type="text" placeholder="Entrez un champion !">
+        <select name="types" id="">
+            <option value="Assasin">Assasin</option>
+            <option value="Combattant">Combattant</option>
+            <option value="Mage">Mage</option>
+            <option value="Tireur">Tireur</option>
+            <option value="Support">Support</option>
+            <option value="Tank">Tank</option>
+        </select>
+        <button onclick="sendChampions()">Enregistrer</button>
+    </form>
+    <div id="champions">
+        <script>
+            fetch('http://localhost:3000/champions')
+            .then((response) => response.json())
+            .then((data) =>{
+                console.log(data)
+                let champions = document.querySelector('#champions')
+                data.forEach(champion => {
+                    champions.innerHTML += `
+                    <a href="championProfil.html?id=${champion.id}">
+                    <p>${champion.name}</p>
+                    </a>
+                    <p>${champion.type}</p>
+                    `
+                })
+            })
+
+            const sendChampions= async() => {
+                event.preventDefault()
+                let name = document.querySelector('input[name="champion"]').value
+                let type =  document.querySelector('select').value
+                await fetch('http://localhost:3000/champions', {
+                    method: 'POST', 
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }, 
+                    body: JSON.stringify({name: name, type : type})
+                })
+                window.location.href = 'index.html'
+
+            }
+        </script>
+    </div>
+</body>
+</html>

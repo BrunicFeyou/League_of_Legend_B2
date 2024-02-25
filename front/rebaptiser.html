@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="renameChampion">
+        <form onsubmit=" event.preventDefault()">
+            <label for="champion"></label>
+            <input name="champion" type="text" placeholder="Entrez un champion !">
+            <select name="types" id="">
+                <option value="Assasin">Assasin</option>
+                <option value="Combattant">Combattant</option>
+                <option value="Mage">Mage</option>
+                <option value="Tireur">Tireur</option>
+                <option value="Support">Support</option>
+                <option value="Tank">Tank</option>
+            </select>
+            <button onclick="saveChampion()">Enregistrer</button>
+        </form>
+    </div>
+    <script>
+        let renameChampion = document.querySelector('#renameChampion')
+        let url = window.location.search
+        let id = new URLSearchParams(url).get('id')
+        fetch(`http://localhost:3000/champions/${id}`)
+        .then((response)=> response.json())
+        .then((data)=> {
+            let name = document.querySelector('input[name="champion"]')
+            let type = document.querySelector('select')
+
+            name.value= data.name
+            type.value = data.type
+        })
+
+        const saveChampion = async() => {
+            console.log("cliqué")
+            let name = document.querySelector('input[name="champion"]').value
+            let type = document.querySelector('select').value
+            let response = await fetch(`http://localhost:3000/champions/${id}`, {
+                method: 'PUT', 
+                headers: {
+                    "Content-Type": "application/json"
+                }, 
+                body: JSON.stringify({name: name, type: type})
+            })
+            window.location.href="index.html"
+        }
+        
+    </script>
+</body>
+</html>
