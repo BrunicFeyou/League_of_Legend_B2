@@ -1,0 +1,21 @@
+@import url('./navBar.css');
+
+
+#renameChampion {
+    width: 100%;
+    height: 73.5vh;
+    background-image: url("/front/images/fond.jpg");
+    object-fit: contain;
+    background-repeat:space;
+   
+}
+#renameChampion h1 {
+    color: var(--background-page);
+    text-align: center;
+    padding: 1.2em;
+    font-size: 3.2em;
+}
+.form-index.profil {
+    display: flex;
+    border: none;
+}

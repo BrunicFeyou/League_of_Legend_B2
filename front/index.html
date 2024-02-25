@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="nav-league">
-        <h2>Bienvenue sur </h2>
-        <img style="width: 7em;" src="./images/League_of_Legends_2019_vector.svg.png" alt="Logo de leagues of leagends"> 
+        <!-- <h2>Bienvenue sur </h2> -->
+       <a href="./index.html"> <img class= 'logo-league' src="./images/League_of_Legends_2019_vector.svg.png" alt="Logo de leagues of leagends"> </a>
     </div>
-    <h1> Choisissez Vos Champions</h1>
-    <form >
+    <h1 class="title"> Choisissez Vos Champions</h1>
+    <form class="form-index">
         <label for="champion"></label>
-        <input name="champion" type="text" placeholder="Entrez un champion !">
-        <select name="types" id="">
+        <input class="input-champion" name="champion" type="text" placeholder="Entrez un champion !">
+        <select class="select-index" name="types" id="">
             <option value="Assasin">Assasin</option>
             <option value="Combattant">Combattant</option>
             <option value="Mage">Mage</option>
@@ -23,9 +24,12 @@
             <option value="Tank">Tank</option>
             <option value="Marksmen">Marksem</option>
         </select>
-        <button onclick="sendChampions()">Enregistrer</button>
+        <button class="button-save-index" onclick="sendChampions()">Enregistrer</button>
     </form>
+    <p class="text">Clicquer sur le nom d'un personnage pour voir son profil. <br>
+    L'attribut juste en dessous correspond à son type.</p>
     <div id="champions">
+       
         <script>
             fetch('http://localhost:3000/champions')
             .then((response) => response.json())
@@ -34,10 +38,15 @@
                 let champions = document.querySelector('#champions')
                 data.forEach(champion => {
                     champions.innerHTML += `
-                    <a href="championProfil.html?id=${champion.id}">
-                    <p>${champion.name}</p>
-                    </a>
-                    <p>${champion.type}</p>
+                    <div class="OneChampion">
+                        <img class='peroLOL' src="./images/lol.png" alt="image d'un personnage lol">
+                        <div class="features-champion">
+                            <p class="name"> 
+                                <a href="championProfil.html?id=${champion.id}">${champion.name}</a>
+                            </p>
+                            <p class ="type">${champion.type}</p>
+                        </div>
+                    </div>
                     `
                 })
             })

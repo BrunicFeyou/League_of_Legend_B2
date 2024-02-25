@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="nav-league">
+        <!-- <h2>Bienvenue sur </h2> -->
+       <a href="./index.html"> <img class= 'logo-league' src="./images/League_of_Legends_2019_vector.svg.png" alt="Logo de leagues of leagends"> </a>
+    </div>
     <div id="champion_profil">
 
     </div>
-    <button onclick= 'deleteChampion()'> Supprimer </button>
-
+    <p class="text">cliquez sur le logo pour revenir à la page d'accueil</p>
     <script> 
     // pour récupérer les informations du champion sur lequel on va cliquer, on va dabord aller chercher l'id entré dans l'url dès le href en page index. 
     // pour ce faire on commence par récupérer l'adresse url 
@@ -23,10 +27,17 @@
         console.log(data)
         let champion = document.querySelector('#champion_profil')
         champion.innerHTML = `
-        <small> ${data.id} </small>
-        <h2>${data.name}</h2>
-        <p>${data.type}</p>
-        <a href="rebaptiser.html?id=${data.id}"> Renomer mon jouer ! </a>
+        <div class= "profil"> 
+            <img class= 'img-lol'  src="./images/lol.png" alt="image d'un personnage lol">
+            <div class="funtions-champion"> 
+                <h2>${data.name}</h2>
+                <p class="type">${data.type}</p>
+                <div class="buttons"> 
+                    <button class="button renommer " > <a href="rebaptiser.html?id=${data.id}">Renomer mon joueur</a> </button>
+                    <button class="button supprimer " onclick= 'deleteChampion()'> Supprimer </button>
+                </div>
+            </div>
+        </div>
         `
        })
 

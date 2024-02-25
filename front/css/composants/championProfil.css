@@ -1,0 +1,72 @@
+@import url('./navBar.css');
+
+#champion_profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center; 
+    width: 100%;
+    height: auto;
+}
+
+.profil{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: var(--width-profil-card);
+    height: var(--height-profil-card);
+    border: var(--border);
+    border-top-right-radius: var(--border-radius-top-right);
+    margin-top: 4em ;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.img-lol{
+    width: 20em;
+    height: 20em;
+    object-fit: cover;
+    position: absolute;
+    right: 20em;
+}
+
+.funtions-champion{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7em;
+    padding-left: 10em;
+   
+   
+}
+
+.buttons {
+    display: flex;
+    gap: 2em;
+       
+}
+
+.button {
+    display: block;
+    width: var(--width-button) ;
+    height: auto;
+    text-align: center;
+    color: var(--background-page);
+    padding: 0.4em;
+    border-top-right-radius: var(--border-radius-top-right);
+    border-style: none;
+}
+
+.button.supprimer {
+    background-color: var(--secondary-button);
+}
+.button.renommer {
+    background-color: var(--primary-button);
+}
+.button.renommer a{
+   color: var(--background-page);
+   text-decoration: none;
+}

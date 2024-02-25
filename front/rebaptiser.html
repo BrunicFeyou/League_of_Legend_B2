@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="nav-league">
+        <!-- <h2>Bienvenue sur </h2> -->
+       <a href="./index.html"> <img class= 'logo-league' src="./images/League_of_Legends_2019_vector.svg.png" alt="Logo de leagues of leagends"> </a>
+    </div>
     <div id="renameChampion">
-        <form onsubmit=" event.preventDefault()">
+        <h1>Redonnez vie à votre joueur</h1>
+        <form class="form-index profil"  onsubmit=" event.preventDefault()">
             <label for="champion"></label>
-            <input name="champion" type="text" placeholder="Entrez un champion !">
-            <select name="types" id="">
+            <input  class="input-champion" name="champion" type="text" placeholder="Entrez un champion !">
+            <select  class="select-index" name="types" id="">
                 <option value="Assasin">Assasin</option>
                 <option value="Combattant">Combattant</option>
                 <option value="Mage">Mage</option>
@@ -18,9 +24,8 @@
                 <option value="Support">Support</option>
                 <option value="Tank">Tank</option>
                 <option value="Marksmen">Marksem</option>
-
             </select>
-            <button onclick="saveChampion()">Enregistrer</button>
+            <button class="button-save-index" onclick="saveChampion()">Enregistrer</button>
         </form>
     </div>
     <script>

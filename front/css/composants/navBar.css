@@ -1,0 +1,14 @@
+.nav-league {
+    width: 100%;
+    height: auto;
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+
+}
+
+.logo-league {
+ width: 13em;
+}

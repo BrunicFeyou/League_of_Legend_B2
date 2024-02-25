@@ -1,0 +1,37 @@
+@import url("./composants/championProfil.css");
+@import url("./composants/index.css");
+@import url("./composants/rebaptiser.css");
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Times New Roman', Times, serif;
+}
+
+:root {
+    --background-page: #fff;  
+    --nav-color: #4583D7;
+    --primary-button : #C79B3B;
+    --secondary-button: #4583D7;
+    --text-color: #1E1E1E;
+
+    --border-radius-top-right: 2em;
+    --border: 1px solid black;
+    --border-radius-buttom-left:1em;
+
+    --height-button: 2.5em;
+    --width-button: 9em;
+
+    --width-home-cards : 100%; 
+    --height-home-cards : 15em; 
+    --width-profil-card : 35em; 
+    --height-profil-card : 30em; 
+    
+    --input-width: 15em;
+    --input-height: 3em;
+    --font-size: 2em;
+
+
+}

@@ -1,0 +1,106 @@
+@import url('./navBar.css');
+
+
+.title {
+    text-align: center;
+    margin: 1em;
+    border: var(--border);
+    border-top-right-radius: var(--border-radius-top-right);
+    border-bottom-left-radius: var(--border-radius-buttom-left);
+}
+
+.form-index {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.input-champion {
+    width: var(--input-width);
+    height: var(--input-height);
+    border-radius: var(--border-radius-top-right);
+}
+.select-index{
+    width: var(--input-width);
+    height: var(--input-height);
+    border-radius: var(--border-radius-top-right);
+}
+
+.button-save-index {
+    width: var(--width-button);
+    height: var(--height-button);
+    border-top-right-radius: var(--border-radius-top-right) ;
+    background-color: var(--text-color);
+    color: var(--background-page);
+}
+
+#champions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 2em;
+    margin-top: 1em;
+    justify-items: center;
+    gap: 2em;
+    
+
+}
+
+.OneChampion{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ width: var(--width-home-cards);
+ height: var(--height-home-cards);
+ border: var(--border);
+ border-top-right-radius: var(--border-radius-top-right);
+ position: relative;
+ cursor: url('/front/images/yellow_circle.jpg');
+ 
+}
+
+.peroLOL{
+    width: 12em;
+    height: 15em;
+    object-fit: cover;
+    position: absolute;
+    left: -3.5em;
+}
+
+.features-champion{
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    justify-content: space-between;
+    padding: 2em 0 2em 3em;
+    
+}
+.name{
+    font-size: var(--font-size);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.name a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.type{
+    display: block;
+    width: var(--width-button) ;
+    height: auto;
+    background-color: var(--text-color);
+    text-align: center;
+    color: var(--background-page);
+    padding: 0.7em;
+    border-top-right-radius: var(--border-radius-top-right);
+}
+
+.text {
+    color: gray;
+    text-align: center;
+    padding: 1em;
+}
